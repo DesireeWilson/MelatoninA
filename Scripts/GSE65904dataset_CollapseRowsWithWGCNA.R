@@ -50,7 +50,7 @@ datasetMaxVariance <- collapseRows(datET = datET, rowID = rowID
 
 #writing the pheno data to file:
 pData <- pData(gse)
-directory <- c("C:\\Users\\wilso\\Documents\\Bioinformatics\\BioinformaticsProjects\\KatieHinchee\\MelatoninA\\Results")
+directory <- c("C:\\Users\\wilso\\Documents\\BioinformaticsProjects\\MelatoninA\\Results")
 write.table(pData, file = paste0(directory,"\\GSE65904_phenoData_2020_10_16.tsv")
             ,append = FALSE
             ,quote = FALSE
@@ -60,7 +60,7 @@ write.table(pData, file = paste0(directory,"\\GSE65904_phenoData_2020_10_16.tsv"
 
 
 #writing the collapsed row data to a file:
-directory <- c("C:\\Users\\wilso\\Documents\\Bioinformatics\\BioinformaticsProjects\\KatieHinchee\\MelatoninA\\Results")
+directory <- c("C:\\Users\\wilso\\Documents\\BioinformaticsProjects\\MelatoninA\\Results")
 
 write.table(datasetMaxMean$datETcollapsed, file = paste0(directory,"\\GSE65904_maxMean_EntrezID.tsv")
             ,append = FALSE
