@@ -38,7 +38,7 @@ head(summaryData)
 
 #using WGCNA to collapse the probe expression data to gene level data:
 datET <- exprs(gse)
-rowGroup <- fData(summaryData)$SYMBOL
+rowGroup <- fData(summaryData)$Entrez_Gene_ID
 rowID <- rownames(datET)
 
 datasetMaxMean <- collapseRows(datET = datET, rowID = rowID
