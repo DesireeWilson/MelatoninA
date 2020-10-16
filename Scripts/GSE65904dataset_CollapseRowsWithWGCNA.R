@@ -51,7 +51,7 @@ datasetMaxVariance <- collapseRows(datET = datET, rowID = rowID
 #writing the pheno data to file:
 pData <- pData(gse)
 directory <- c("C:\\Users\\wilso\\Documents\\Bioinformatics\\BioinformaticsProjects\\KatieHinchee\\MelatoninA\\Results")
-write.table(pData, file = paste0(directory,"\\GSE65904_phenoData.tsv")
+write.table(pData, file = paste0(directory,"\\GSE65904_phenoData_2020_10_16.tsv")
             ,append = FALSE
             ,quote = FALSE
             ,sep = "\t"
@@ -62,21 +62,21 @@ write.table(pData, file = paste0(directory,"\\GSE65904_phenoData.tsv")
 #writing the collapsed row data to a file:
 directory <- c("C:\\Users\\wilso\\Documents\\Bioinformatics\\BioinformaticsProjects\\KatieHinchee\\MelatoninA\\Results")
 
-write.table(datasetMaxMean$datETcollapsed, file = paste0(directory,"\\GSE65904_maxMean.tsv")
+write.table(datasetMaxMean$datETcollapsed, file = paste0(directory,"\\GSE65904_maxMean_EntrezID.tsv")
             ,append = FALSE
             ,quote = FALSE
             ,sep = "\t"
             ,row.names = TRUE
             ,col.names = TRUE)
 
-write.table(datasetAverage$datETcollapsed, file = paste0(directory,"\\GSE65904_average.tsv")
+write.table(datasetAverage$datETcollapsed, file = paste0(directory,"\\GSE65904_average_EntrezID.tsv")
             ,append = FALSE
             ,quote = FALSE
             ,sep = "\t"
             ,row.names = TRUE
             ,col.names = TRUE)
 
-write.table(datasetMaxVariance$datETcollapsed, file = paste0(directory,"\\GSE65904_maxVariance.tsv")
+write.table(datasetMaxVariance$datETcollapsed, file = paste0(directory,"\\GSE65904_maxVariance_EntrezID.tsv")
             ,append = FALSE
             ,quote = FALSE
             ,sep = "\t"
