@@ -38,7 +38,7 @@ head(summaryData)
 
 #using WGCNA to collapse the probe expression data to gene level data:
 datET <- exprs(gse)
-rowGroup <- fData(summaryData)$Entrez_Gene_ID
+rowGroup <- paste0(fData(summaryData)$SYMBOL, " | ", fData(summaryData)$Entrez_Gene_ID)
 rowID <- rownames(datET)
 
 datasetMaxMean <- collapseRows(datET = datET, rowID = rowID
@@ -51,7 +51,7 @@ datasetMaxVariance <- collapseRows(datET = datET, rowID = rowID
 #writing the pheno data to file:
 pData <- pData(gse)
 directory <- c("C:\\Users\\wilso\\Documents\\BioinformaticsProjects\\MelatoninA\\Results")
-write.table(pData, file = paste0(directory,"\\GSE65904_phenoData_2020_10_16.tsv")
+write.table(pData, file = paste0(directory,"\\GSE65904_phenoData_2020_10_20.tsv")
             ,append = FALSE
             ,quote = FALSE
             ,sep = "\t"
@@ -62,21 +62,21 @@ write.table(pData, file = paste0(directory,"\\GSE65904_phenoData_2020_10_16.tsv"
 #writing the collapsed row data to a file:
 directory <- c("C:\\Users\\wilso\\Documents\\BioinformaticsProjects\\MelatoninA\\Results")
 
-write.table(datasetMaxMean$datETcollapsed, file = paste0(directory,"\\GSE65904_maxMean_EntrezID.tsv")
+write.table(datasetMaxMean$datETcollapsed, file = paste0(directory,"\\GSE65904_maxMean_EntrezIDandGeneSymbol.tsv")
             ,append = FALSE
             ,quote = FALSE
             ,sep = "\t"
             ,row.names = TRUE
             ,col.names = TRUE)
 
-write.table(datasetAverage$datETcollapsed, file = paste0(directory,"\\GSE65904_average_EntrezID.tsv")
+write.table(datasetAverage$datETcollapsed, file = paste0(directory,"\\GSE65904_average_EntrezIDandGeneSymbol.tsv")
             ,append = FALSE
             ,quote = FALSE
             ,sep = "\t"
             ,row.names = TRUE
             ,col.names = TRUE)
 
-write.table(datasetMaxVariance$datETcollapsed, file = paste0(directory,"\\GSE65904_maxVariance_EntrezID.tsv")
+write.table(datasetMaxVariance$datETcollapsed, file = paste0(directory,"\\GSE65904_maxVariance_EntrezIDandGeneSymbol.tsv")
             ,append = FALSE
             ,quote = FALSE
             ,sep = "\t"
